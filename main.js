@@ -7,10 +7,15 @@ let ReactDom = {
 }
 
 let createComponent = {
-    createElem: function(type) {
+    createElem: function(type, attrbs, content) {
 
         let myElement = document.createElement(type);
-        let newContent = document.createTextNode('test');
+        for (const property in attrbs) {
+            console.log(property);
+            console.log(attrbs[property]);
+            myElement.setAttribute(property.toString(), attrbs[property].toString())
+        }
+        let newContent = document.createTextNode(content);
         myElement.appendChild(newContent);
         return myElement;
     }
@@ -18,7 +23,7 @@ let createComponent = {
 
 ReactDom.render(
         document.getElementById('root'), [
-            createComponent.createElem('div'), 
+            createComponent.createElem('div', {'id': '1', 'class': 'test'}, 'content'), 
             createComponent.createElem('div'),
         ]
 )
