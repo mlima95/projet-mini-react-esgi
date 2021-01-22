@@ -4,8 +4,8 @@ class Button extends Component {
     render() {
         return (
             document.getElementById('root'), [
-                createComponent.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-                createComponent.createElem('div'),
+                MiniReact.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
+                MiniReact.createElem('div'),
             ]
         );
     }
@@ -22,7 +22,7 @@ console.log(Component)
 //     }
 // }
 //
-// let createComponent = {
+// let MiniReact = {
 //     createElem: function(type, attrbs, content) {
 //
 //         let myElement = document.createElement(type);
@@ -38,8 +38,8 @@ console.log(Component)
 // }
 //
 // ReactDom.render(
-//         document.getElementById('root'), [
-//             createComponent.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-//             createComponent.createElem('div'),
-//         ]
+//     document.getElementById('root'), [
+//         MiniReact.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
+//         MiniReact.createElem('div'),
+//     ]
 // )
