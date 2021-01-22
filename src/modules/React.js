@@ -1,36 +1,43 @@
-function createElem(type, attrbs, content, childElement) {
-
-    let myElement = document.createElement(type);
-    for (const property in attrbs) {
-        myElement.setAttribute(property.toString(), attrbs[property].toString())
+/**
+ *
+ * @param type
+ * @param attrbs
+ * @param content
+ * @param childElement
+ *
+ * @return Object
+ */
+function createEl(type, attrbs, content, childElement) {
+    return {
+        type: type,
+        attrbs: attrbs,
+        content: content,
+        childElement: childElement
     }
-
-    if(content === null){
-        content = ''
-    }
-
-    if (childElement != null && childElement != '') {
-        if (childElement.length > 1) {
-            childElement.forEach(element => {
-                myElement.appendChild(element)
-            });
-        } else {
-            myElement.appendChild(childElement);
-        }
-    } else {
-        console.log('null')
-    }
-
-    let newContent = document.createTextNode(content);
-    myElement.appendChild(newContent);
-    return myElement;
 }
 
 export const React = {
-    createElem,
-    render: function (pElement, cElement) {
-        cElement.forEach(element => {
-            pElement.appendChild(element)
-        });
-    }
+    createEl
 }
+
+
+//II] Pros: Update, Cons: generation
+//  React.createElement => Object
+//  Component.render => Object
+
+
+//  ReactDOM.render =>
+//    1) Object => DomElement
+// {
+//     type: 'button'
+//     props: {
+//         id: 'iddetest',
+//         class: 'btn btn-primary',
+//         content: 'Cliquer ici',
+//     },
+//     state: {
+//         count: 0
+//     }
+// }
+//    2) rootElement.appendChild(DomElement);
+// <button id='iddetest' class='btn btn-primary'>Cliquer ici</button>

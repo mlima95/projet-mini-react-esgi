@@ -1,28 +1,9 @@
 import {React} from './src/modules/React.js'
-import Component from "./src/modules/Component.js";
+import {ReactDom} from "./src/modules/ReactDom.js";
 
-class Button extends Component {
+let test = React.createEl('button', {
+    'id': 'testButton',
+    'class': 'btn btn-primary'
+}, "content", React.createEl('button', {'id': 'testButton', 'class': 'btn btn-primary'}, "content"))
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            click: false
-        }
-    }
-
-    render() {
-        return (
-            React.createElem('button', {'id': 'testButton', 'class': 'btn btn-primary'}, "content")
-        )
-    }
-}
-
-console.log(Button)
-
-
-React.render(
-    document.getElementById('root'), [
-        React.createElem(Button)
-    ]
-)
-
+ReactDom.render(document.getElementById('root'), test)
