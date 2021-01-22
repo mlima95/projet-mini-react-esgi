@@ -1,26 +1,28 @@
-// import Component from './src/modules/Component.js'
 import {React} from './src/modules/React.js'
+import Component from "./src/modules/Component.js";
+
+class Button extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            click: false
+        }
+    }
+
+    render() {
+        return (
+            React.createElem('button', {'id': 'testButton', 'class': 'btn btn-primary'}, "content")
+        )
+    }
+}
+
+console.log(Button)
+
 
 React.render(
     document.getElementById('root'), [
-        React.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-        React.createElem('div'),
-        React.createElem('ul', {'id': '1', 'class': 'test'}, null,
-            React.createElem('li', {
-                'id': 'testid',
-                'class': 'test'
-            }, 'content'))
+        React.createElem(Button)
     ]
 )
 
-
-// class Button extends Component {
-//     render() {
-//         return (
-//             document.getElementById('root'), [
-//                 React.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-//                 React.createElem('div'),
-//             ]
-//         );
-//     }
-// }
