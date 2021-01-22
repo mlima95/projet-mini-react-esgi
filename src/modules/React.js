@@ -5,6 +5,10 @@ function createElem(type, attrbs, content, childElement) {
         myElement.setAttribute(property.toString(), attrbs[property].toString())
     }
 
+    if(content === null){
+        content = ''
+    }
+
     if (childElement != null && childElement != '') {
         if (childElement.length > 1) {
             childElement.forEach(element => {
