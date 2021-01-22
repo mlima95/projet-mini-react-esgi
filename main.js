@@ -1,45 +1,26 @@
-import Component from './src/modules/Component.js'
+// import Component from './src/modules/Component.js'
+import {React} from './src/modules/React.js'
 
-class Button extends Component {
-    render() {
-        return (
-            document.getElementById('root'), [
-                MiniReact.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-                MiniReact.createElem('div'),
-            ]
-        );
-    }
-}
+React.render(
+    document.getElementById('root'), [
+        React.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
+        React.createElem('div'),
+        React.createElem('ul', {'id': '1', 'class': 'test'}, null,
+            React.createElem('li', {
+                'id': 'testid',
+                'class': 'test'
+            }, 'content'))
+    ]
+)
 
-console.log(Component)
 
-
-// let ReactDom = {
-//     render: function (pElement, cElement) {
-//         cElement.forEach(element => {
-//             pElement.appendChild(element)
-//         });
+// class Button extends Component {
+//     render() {
+//         return (
+//             document.getElementById('root'), [
+//                 React.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
+//                 React.createElem('div'),
+//             ]
+//         );
 //     }
 // }
-//
-// let MiniReact = {
-//     createElem: function(type, attrbs, content) {
-//
-//         let myElement = document.createElement(type);
-//         for (const property in attrbs) {
-//             console.log(property);
-//             console.log(attrbs[property]);
-//             myElement.setAttribute(property.toString(), attrbs[property].toString())
-//         }
-//         let newContent = document.createTextNode(content);
-//         myElement.appendChild(newContent);
-//         return myElement;
-//     }
-// }
-//
-// ReactDom.render(
-//     document.getElementById('root'), [
-//         MiniReact.createElem('div', {'id': '1', 'class': 'test'}, 'content'),
-//         MiniReact.createElem('div'),
-//     ]
-// )
