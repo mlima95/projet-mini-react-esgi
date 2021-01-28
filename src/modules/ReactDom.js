@@ -25,9 +25,7 @@ function render(rootElement, createObject) {
 
     //génération du DOM
     return (
-        myElement.forEach(element => {
-            rootElement.appendChild(element)
-        })
+        rootElement.appendChild(myElement)
     )
 
 }

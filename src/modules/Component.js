@@ -22,7 +22,7 @@ export default class Component {
     }
 
     render() {
-
+        React.createEl()
     };
 
 }
