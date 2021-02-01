@@ -11,19 +11,18 @@ function createEl(type, attrbs, content, childElement) {
 
     //si component récupérer son render
     //si type class créer new et return render
+    //@Check if type check
     if (typeof type === "function") {
         return {
             type: type,
             attrbs: attrbs,
             content: content,
-            childElement: childElement
+            childElement: childElement 
         }
     } else {
         //retourner Composent
         return type
     }
-
-
 }
 
 export const React = {

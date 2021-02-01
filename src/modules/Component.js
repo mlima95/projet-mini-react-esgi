@@ -1,12 +1,13 @@
 export default class Component {
 
-    constructor(props) {
-        this.props = props;
-        this.prevProps = undefined;
+    constructor(state) {
+        this.state = state;
+        this.state = undefined;
     }
 
     // optionnel si il n'y a pas de state
-    setState() {
+    setState(prevState, currentState) {
+
     }
 
     // regénérer ou non prevProps undefined
