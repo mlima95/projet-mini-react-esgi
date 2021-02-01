@@ -1,5 +1,5 @@
-import Component from "../modules/Component";
-import {React} from "../modules/React";
+import Component from "../modules/Component.js";
+import {React} from "../modules/React.js";
 
 export class Button extends Component {
     constructor(props) {
@@ -13,6 +13,11 @@ export class Button extends Component {
 
 
     render() {
-        return React.createEl("button", {onClick: () => this.setState({click: true, counter: this.state.counter + 1})})
+        return React.createEl("button", {
+            onClick: () => this.setState({
+                click: true,
+                counter: this.state.counter + 1
+            }, {click: false, counter: this.state.counter + 4})
+        })
     }
 }

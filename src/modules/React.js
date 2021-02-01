@@ -13,13 +13,15 @@ function createEl(type, attrbs, content, childElement) {
     //si type class créer new et return render
     //@Check if type check
     if (typeof type === "function") {
+        console.log("Type function :",type);
         return {
             type: type,
             attrbs: attrbs,
             content: content,
-            childElement: childElement 
+            childElement: childElement
         }
     } else {
+        console.log("Type else : ", type);
         //retourner Composent
         return type
     }

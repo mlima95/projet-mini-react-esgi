@@ -7,7 +7,12 @@ export default class Component {
 
     // optionnel si il n'y a pas de state
     setState(prevState, currentState) {
-
+        if(this.shouldUpdate(prevState, currentState)){
+            prevState = Object.assign({}, this.prevState);
+            this.state = Object.assign({}, currentState);
+            console.log(prevState);
+            console.log(this.state);
+        }
     }
 
     // regénérer ou non prevProps undefined
