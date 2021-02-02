@@ -9,7 +9,10 @@ import {Button} from "./src/Component/Button.js";
 //     'id': 'test',
 //     'class': 'btn btn-primary'
 // }, "testul"));
-let button = new Button();
-let buttonComponent = React.createEl(button, {title: "item1"}, "toto");
+let buttonComponent1 = React.createEl('div', {title: "item1"}, "toto")
+let buttonComponent2 = React.createEl('nav', {title: "item1"}, "toto")
+let buttonComponent3 = React.createEl(Button, {title: "item1"}, "toto")
 
-ReactDom.render(document.getElementById('root'), buttonComponent)
+// let buttonComponent = React.createEl(button, {title: "item1"}, "toto");
+
+// ReactDom.render(document.getElementById('root'), buttonComponent)

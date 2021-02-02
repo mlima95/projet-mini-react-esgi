@@ -1,5 +1,4 @@
 function render(rootElement, createObject) {
-    console.log('on rentre dans render')
     let myElement = document.createElement(createObject.type);
     for (const property in createObject.attrbs) {
         myElement.setAttribute(property.toString(), createObject.attrbs[property].toString())
@@ -15,7 +14,6 @@ function render(rootElement, createObject) {
             myElement.appendChild(createObject.childElement);
         }
     } else {
-        console.log('aucun enfant')
     }
 
     let newContent = document.createTextNode(createObject.content);

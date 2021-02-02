@@ -7,23 +7,34 @@
  *
  * @return Object
  */
-function createEl(type, attrbs, content, childElement) {
+function createEl(type, props, childElement) {
 
     //si component récupérer son render
     //si type class créer new et return render
     //@Check if type check
-    if (typeof type === "function") {
-        console.log("Type function :",type);
-        return {
+    if (type === "div") 
+    {
+        //console.log('ceci est une div');
+        let obj = {
             type: type,
-            attrbs: attrbs,
-            content: content,
+            props: props,
+            childElement: childElement
+         }
+
+        console.log(obj)
+    } 
+    else if(type === "nav")
+    {
+        console.log('ceci est une nav');
+    }
+    else {
+        let obj2 = {
+            type: new type(),
+            props: props,
             childElement: childElement
         }
-    } else {
-        console.log("Type else : ", type);
-        //retourner Composent
-        return type
+
+        console.log(obj2)
     }
 }
 
