@@ -10,8 +10,8 @@ import {Button} from "./src/Component/Button.js";
 //     'class': 'btn btn-primary'
 // }, "testul"));
 let buttonComponent1 = React.createEl('nav', {title: "item1"}, "toto")
-let buttonComponent2 = React.createEl('nav', {title: "item1"}, buttonComponent1)
-let buttonComponent3 = React.createEl('div', {title: "item1"}, buttonComponent2)
+let buttonComponent2 = React.createEl('nav', {title: "item2"}, buttonComponent1)
+let buttonComponent3 = React.createEl('div', {title: "item3"}, buttonComponent2)
 
 let buttonComponent4 = React.createEl(Button, {title: "item1"}, "toto")
 

@@ -1,5 +1,5 @@
 function render(rootElement, createObject) {
-
+    console.log("first root",rootElement);
     if(typeof createObject.type === 'object')
     {
         console.log('obj')
@@ -21,12 +21,14 @@ function render(rootElement, createObject) {
         }
         else
         {
-            console.log(createObject.childElement)
-            createObject.childElement.forEach(element => {
-                myElement.appendChild(childElement)
-            });
+            console.log(createObject.childElement);
+            console.log(rootElement);
+            render(myElement, createObject.childElement);
+            // console.log(createObject.childElement)
+            // createObject.childElement.forEach(element => {
+            //     myElement.appendChild(childElement)
+            // });
         }
-    
         //génération du DOM
         return (
             rootElement.appendChild(myElement)
