@@ -1,16 +1,14 @@
 import Component from "../modules/Component.js";
 import {React} from "../modules/React.js";
 
-export class Button extends Component {
+class Button extends Component {
     constructor(props) {
         super(props);
         this.state = {
             click: false,
             counter: 0
-
         }
     }
-
 
     render() {
         return React.createEl("button", {
@@ -21,3 +19,5 @@ export class Button extends Component {
         })
     }
 }
+
+export default Button;

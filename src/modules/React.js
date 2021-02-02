@@ -1,30 +1,24 @@
+String.prototype.interpolate = function (o) {
+    return this.replace(/{([^{}]*)}/g,
+        function (a, b) {
+            var r = o[b];
+            return typeof r === 'string' || typeof r === 'number' ? r : a;
+        }
+    );
+};
+
 /**
  *
- * @param type
- * @param attrbs
- * @param content
- * @param childElement
  *
  * @return Object
+ * @param tagOrElement
+ * @param props
+ * @param children
  */
-function createEl(type, attrbs, content, childElement) {
+function createEl(tagOrElement, props, children) {
 
-    //si component récupérer son render
-    //si type class créer new et return render
-    //@Check if type check
-    if (typeof type === "function") {
-        console.log("Type function :",type);
-        return {
-            type: type,
-            attrbs: attrbs,
-            content: content,
-            childElement: childElement
-        }
-    } else {
-        console.log("Type else : ", type);
-        //retourner Composent
-        return type
-    }
+    
+
 }
 
 export const React = {

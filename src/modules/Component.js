@@ -6,12 +6,16 @@ export default class Component {
     }
 
     // optionnel si il n'y a pas de state
+    // a chaque fois trigger les events
+    // event catcher par reactDom
     setState(prevState, currentState) {
-        if(this.shouldUpdate(prevState, currentState)){
+        if (this.shouldUpdate(prevState, currentState)) {
+            console.log('je setState');
             prevState = Object.assign({}, this.prevState);
             this.state = Object.assign({}, currentState);
             console.log(prevState);
             console.log(this.state);
+            this.render()
         }
     }
 
@@ -28,7 +32,7 @@ export default class Component {
     }
 
     render() {
-        React.createEl()
+        react.createEl()
     };
 
 }

@@ -1,15 +1,10 @@
 import {React} from './src/modules/React.js'
 import {ReactDom} from "./src/modules/ReactDom.js";
-import {Button} from "./src/Component/Button.js";
+import Button from "./src/Component/Button.js";
 
-// let test = React.createEl('button', {
-//     'id': 'testButton',
-//     'class': 'btn btn-primary'
-// }, "content", React.createEl('ul', {
-//     'id': 'test',
-//     'class': 'btn btn-primary'
-// }, "testul"));
-let button = new Button();
-let buttonComponent = React.createEl(button, {title: "item1"}, "toto");
+let test = React.createEl('div', {
+    'id': 'testId',
+    'class': 'containe'
+}, React.createEl('ul', {'id': 'test', 'class': 'btn btn-primary'}, "testul"));
 
-ReactDom.render(document.getElementById('root'), buttonComponent)
+ReactDom.render(document.getElementById('root'), test)
