@@ -1,32 +1,38 @@
 export default class Component {
 
-    constructor(state) {
-        this.state = state;
-        this.state = undefined;
+    constructor(props) {
+        this.props = props;
+        this.state = {};
+        this.oldState = undefined;
+        this.oldProps = undefined;
+        this.previewRender = undefined;
     }
 
     // optionnel si il n'y a pas de state
-    // setState(prevState, currentState) {
-    //     if(this.shouldUpdate(prevState, currentState)){
-    //         prevState = Object.assign({}, this.prevState);
-    //         this.state = Object.assign({}, currentState);
-    //     }
-    // }
+    setState(currentState) {
+        this.oldState = Object.assign({}, this.state);
+        this.state = Object.assign({}, this.state, currentState);
+    }
 
     // // regénérer ou non prevProps undefined
-    // display(props) {
-    //     //if shouldUpdate appeler
-    //     if (this.shouldUpdate()) console.log("Je should update");
-    // }
+    display(props) {
+        this.oldProps = Object.assign({}, this.props);
+        this.props = props;
+        //if shouldUpdate appeler
+        if (this.shouldUpdate()){
+            this.previewRender = this.render();
+        }
+        return this.previewRender;
+    }
 
     // // vérification si on appel ou non la méthode render
     // // il stocke l'ancien prevRender
-    // shouldUpdate(nextProps, nextState) {
-    //     return JSON.stringify(nextProps) !== JSON.stringify(nextState);
-    // }
+    shouldUpdate(prevState, nextState) {
+        return JSON.stringify(prevState) !== JSON.stringify(nextState);
+    }
 
     render() {
-        React.createEl()
+        throw new Error("Abstract method");
     };
 
 }

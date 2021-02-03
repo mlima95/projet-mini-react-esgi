@@ -1,9 +1,9 @@
 function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
-
+            render(rootElement, createObject.type.display(createObject.props));
     } else {
         let myElement = document.createElement(createObject.type);
-        for (const prop in createObject.props) {
+        for (const prop of Object.keys(createObject.props)) {
             myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
         }
 
