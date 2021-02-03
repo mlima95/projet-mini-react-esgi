@@ -10,7 +10,8 @@ export class Button extends Component {
     render() {
         return React.createEl(
             "button",
-            { onclick: () => setState({counter: this.state.counter +1}), counter: this.state.counter}
+            { onclick: () => setState({counter: this.state.counter +1}), counter: this.state.counter},
+            "toto"
         )
     }
 }

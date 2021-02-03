@@ -12,20 +12,16 @@ function createEl(type, props, element) {
     //si component récupérer son render
     //si type class créer new et return render
     //@Check if type check
-    //console.log(typeof(type))
     let objComponent = {
         type: null,
         props: props,
         childElement: element
     }
 
-    if (typeof type === 'string') 
-    {
+    if (typeof type === 'string') {
         objComponent.type = type;
         return objComponent;
-    } 
-    else 
-    {
+    } else {
         objComponent.type = new type();
         return objComponent;
     }
