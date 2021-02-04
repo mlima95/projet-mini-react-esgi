@@ -9,6 +9,9 @@ function render(rootElement, createObject) {
 
         if (typeof createObject.childElement === 'string') {
 
+
+            console.log(createObject.childElement.split(/{([^{}]*)}/g))
+
             let valueInterpolate = createObject.props.prop_access(createObject.childElement.substring(
                 createObject.childElement.lastIndexOf("{") + 1,
                 createObject.childElement.lastIndexOf("}")
