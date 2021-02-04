@@ -14,7 +14,7 @@ function render(rootElement, createObject) {
                 createObject.childElement.lastIndexOf("}")
             ))
 
-            let nodeText = document.createTextNode(createObject.childElement.replace(/{([^{}]*)}/g, valueInterpolate));
+            let nodeText = document.createTextNode(createObject.childElement.interpolate(valueInterpolate));
 
             myElement.appendChild(nodeText);
         } else if (createObject.childElement === undefined) {
