@@ -11,8 +11,12 @@ export class Button extends Component {
     render() {
         return React.createEl(
             "button",
-            { onclick: () => this.setState({counter: this.state.counter +1, click : !this.state.click}), disabled : this.state.click},
-            "toto"
+            {
+                onclick: () => this.setState({counter: this.state.counter + 1, click: !this.state.click}),
+                disabled: this.state.click,
+                type: {name: "chien"},
+            },
+            "je suis un {type.name}"
         )
     }
 }

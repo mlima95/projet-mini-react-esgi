@@ -19,7 +19,8 @@ export default class Component {
         this.oldProps = Object.assign({}, this.props);
         this.props = props;
         //if shouldUpdate appeler
-        if (this.shouldUpdate()){
+        console.log('this.shouldUpdate() : ' + this.shouldUpdate(this.oldProps, this.props, this.oldState, this.state))
+        if (this.shouldUpdate(this.oldProps, this.props, this.oldState, this.state)) {
             this.previewRender = this.render();
         }
         return this.previewRender;
@@ -27,8 +28,8 @@ export default class Component {
 
     // // vérification si on appel ou non la méthode render
     // // il stocke l'ancien prevRender
-    shouldUpdate(prevState, nextState) {
-        return JSON.stringify(prevState) !== JSON.stringify(nextState);
+    shouldUpdate(prevProps, nextProps, prevState, nextState) {
+        return (JSON.stringify(prevState) !== JSON.stringify(nextState)) || (JSON.stringify(prevProps) !== JSON.stringify(nextProps));
     }
 
     render() {
