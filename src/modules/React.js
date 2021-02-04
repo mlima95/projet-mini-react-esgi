@@ -1,9 +1,34 @@
+String.prototype.interpolate = function (o) {
+    return this.replace(/{([^{}]*)}/g,
+        function (a, b) {
+            var r = o[b];
+            return typeof r === 'string' || typeof r === 'number' ? r : a;
+        }
+    );
+};
+
+Object.prototype.prop_access = function (path) {
+    let object = Object(this);
+    if (object === null) return path + " not exist"
+    if (typeof path !== "string" || path == "") return object;
+    let decomposePath = path.split(".");
+    let tab = [];
+    for (let element of decomposePath) {
+        tab.push(element);
+        let tabJoin = tab.join('.');
+        if (typeof (object[element]) == "undefined") {
+            return tabJoin + " not exist";
+        }
+        object = object[element];
+    }
+    return object;
+}
+
 /**
  *
  * @param type
- * @param attrbs
- * @param content
- * @param childElement
+ * @param props
+ * @param element
  *
  * @return Object
  */

@@ -1,6 +1,6 @@
 function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
-            render(rootElement, createObject.type.display(createObject.props));
+        render(rootElement, createObject.type.display(createObject.props));
     } else {
         let myElement = document.createElement(createObject.type);
         for (const prop of Object.keys(createObject.props)) {
@@ -8,7 +8,14 @@ function render(rootElement, createObject) {
         }
 
         if (typeof createObject.childElement === 'string') {
-            let nodeText = document.createTextNode(createObject.childElement);
+
+            let valueInterpolate = createObject.props.prop_access(createObject.childElement.substring(
+                createObject.childElement.lastIndexOf("{") + 1,
+                createObject.childElement.lastIndexOf("}")
+            ))
+
+            let nodeText = document.createTextNode(createObject.childElement.replace(/{([^{}]*)}/g, valueInterpolate));
+
             myElement.appendChild(nodeText);
         } else if (createObject.childElement === undefined) {
             console.log('pas d\'enfant')
