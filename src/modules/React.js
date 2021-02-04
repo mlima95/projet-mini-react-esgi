@@ -6,7 +6,7 @@ String.prototype.interpolate = function (value) {
 Object.prototype.prop_access = function (path) {
     let object = Object(this);
     if (object === null) return path + " not exist"
-    if (typeof path !== "string" || path == "") return object;
+    if (typeof path !== "string" || path == "") return 'object';
     let decomposePath = path.split(".");
     let tab = [];
     for (let element of decomposePath) {

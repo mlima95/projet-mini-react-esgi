@@ -19,7 +19,7 @@ export default class Component {
         this.oldProps = Object.assign({}, this.props);
         this.props = props;
         //if shouldUpdate appeler
-        console.log('this.shouldUpdate() : ' + this.shouldUpdate(this.oldProps, this.props, this.oldState, this.state))
+        //console.log('this.shouldUpdate() : ' + this.shouldUpdate(this.oldProps, this.props, this.oldState, this.state))
         if (this.shouldUpdate(this.oldProps, this.props, this.oldState, this.state)) {
             this.previewRender = this.render();
         }

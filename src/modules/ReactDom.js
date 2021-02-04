@@ -9,14 +9,24 @@ function render(rootElement, createObject) {
 
         if (typeof createObject.childElement === 'string') {
 
-            let valueInterpolate = createObject.props.prop_access(createObject.childElement.substring(
-                createObject.childElement.lastIndexOf("{") + 1,
-                createObject.childElement.lastIndexOf("}")
-            ))
 
-            let nodeText = document.createTextNode(createObject.childElement.interpolate(valueInterpolate));
+            let matchInterpolate = createObject.childElement.match(/{([^}]*)}/g).length;
+
+            for(var i = 0; i < matchInterpolate; i++)
+            {
+                let childTextElement = createObject.childElement.match(/{([^}]*)}/);
+                let result = createObject.props.prop_access(childTextElement[1])
+
+                createObject.childElement = createObject.childElement.replace(createObject.childElement.match(/{([^}]*)}/)[0], result)
+            }
+
+            console.log(createObject.childElement)
+ 
+
+            let nodeText = document.createTextNode(createObject.childElement);
 
             myElement.appendChild(nodeText);
+
         } else if (createObject.childElement === undefined) {
             console.log('pas d\'enfant')
         } else {
