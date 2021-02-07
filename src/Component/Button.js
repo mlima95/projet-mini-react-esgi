@@ -18,6 +18,7 @@ export class Button extends Component {
                 sexe: {sexe: "medor"},
             },
             "je suis un {type.name} {sexe.sexe}"
+
         )
     }
 }
