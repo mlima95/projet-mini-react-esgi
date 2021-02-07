@@ -15,9 +15,14 @@ export class Button extends Component {
                 onclick: () => this.setState({counter: this.state.counter + 1, click: !this.state.click}),
                 disabled: this.state.click,
                 type: {name: "chien"},
-                sexe: {sexe: "medor"},
+                sexe: "medor",
+                personne: {
+                    type: {
+                        name: "polo"
+                    }
+                }
             },
-            "je suis un {type.name} {sexe.sexe}"
+            "je suis un {type.name} {sexe} qui s'appelle {personne.type.name}"
 
         )
     }

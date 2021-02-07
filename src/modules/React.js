@@ -1,6 +1,12 @@
-String.prototype.interpolate = function (value) {
-    return this.replace(/{([^{}]*)}/g, value
-    );
+String.prototype.interpolate = function (createObject) {
+    let string = String(this);
+    const lengthToInterpolate = string.match(/{([^}]*)}/g).length;
+    for (let i = 0; i < lengthToInterpolate; i++) {
+        let childTextElement = string.match(/{([^}]*)}/);
+        let childTextElementMatch = createObject.props.prop_access(childTextElement[1]);
+        string = string.replace(string.match(/{([^}]*)}/)[0], childTextElementMatch);
+    }
+    return string;
 };
 
 Object.prototype.prop_access = function (path) {
