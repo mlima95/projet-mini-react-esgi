@@ -4,6 +4,9 @@ function render(rootElement, createObject) {
     } else {
         let myElement = document.createElement(createObject.type);
         for (const prop of Object.keys(createObject.props)) {
+            for(const event of Object.values(createObject.event)){
+                myElement.addEventListener(event.name, event);
+            }
             myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
         }
 

@@ -10,6 +10,7 @@ export default class Component {
 
     // optionnel si il n'y a pas de state
     setState(currentState) {
+        console.log(currentState);
         this.oldState = Object.assign({}, this.state);
         this.state = Object.assign({}, this.state, currentState);
     }

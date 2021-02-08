@@ -9,11 +9,12 @@ export class Button extends Component {
     }
 
     render() {
+        const click = () => {
+            this.setState({counter: this.state.counter + 1, click: !this.state.click})
+        }
         return React.createEl(
             "button",
             {
-                onclick: () => this.setState({counter: this.state.counter + 1, click: !this.state.click}),
-                disabled: this.state.click,
                 type: {name: "chien"},
                 sexe: "medor",
                 personne: {
@@ -22,8 +23,10 @@ export class Button extends Component {
                     }
                 }
             },
+            [click],
             "je suis un {type.name} {sexe} qui s'appelle {personne.type.name}"
 
         )
+
     }
 }

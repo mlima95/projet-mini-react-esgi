@@ -30,11 +30,12 @@ Object.prototype.prop_access = function (path) {
  *
  * @param type
  * @param props
+ * @param event
  * @param element
  *
  * @return Object
  */
-function createEl(type, props, element) {
+function createEl(type, props, event, element) {
 
     //si component récupérer son render
     //si type class créer new et return render
@@ -42,6 +43,7 @@ function createEl(type, props, element) {
     let objComponent = {
         type: null,
         props: props,
+        event: event,
         childElement: element
     }
 
@@ -58,7 +60,7 @@ export const React = {
     createEl
 }
 
-
+//nomFunction.name
 //II] Pros: Update, Cons: generation
 //  React.createElement => Object
 //  Component.render => Object
