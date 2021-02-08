@@ -9,4 +9,4 @@ import {Button} from "./src/Component/Button.js";
 
 let buttonComponent4 = React.createEl(Button, {title: "item1"}, "toto");
 
- ReactDom.render(document.getElementById('root'), buttonComponent4)
+ReactDom.render(document.getElementById('root'), buttonComponent4)

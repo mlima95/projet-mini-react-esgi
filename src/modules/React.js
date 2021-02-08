@@ -1,3 +1,6 @@
+import {type_check_v1} from "./validator.js";
+
+
 String.prototype.interpolate = function (createObject) {
     let string = String(this);
     const lengthToInterpolate = string.match(/{([^}]*)}/g).length;
@@ -35,7 +38,7 @@ Object.prototype.prop_access = function (path) {
  *
  * @return Object
  */
-function createEl(type, props, event, element) {
+function createEl(type, props, element, event = null) {
 
     //si component récupérer son render
     //si type class créer new et return render
@@ -47,7 +50,7 @@ function createEl(type, props, event, element) {
         childElement: element
     }
 
-    if (typeof type === 'string') {
+    if (type_check_v1(type, "string")) {
         objComponent.type = type;
         return objComponent;
     } else {
