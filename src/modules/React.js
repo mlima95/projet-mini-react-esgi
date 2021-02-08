@@ -52,6 +52,7 @@ function createEl(type, props, event, element) {
         return objComponent;
     } else {
         objComponent.type = new type();
+        console.log(objComponent)
         return objComponent;
     }
 }

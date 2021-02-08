@@ -1,9 +1,12 @@
 function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
+        //console.log('test')
         render(rootElement, createObject.type.display(createObject.props));
     } else {
         let myElement = document.createElement(createObject.type);
+        //console.log('test2')
         for (const prop of Object.keys(createObject.props)) {
+            console.log(prop);
             for(const event of Object.values(createObject.event)){
                 myElement.addEventListener(event.name, event);
             }
