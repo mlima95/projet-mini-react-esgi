@@ -23,6 +23,16 @@ export class NavBar extends Component {
                     {class: "li-nav"},
                     'li-2'
                 ),
+                React.createEl(
+                    "li",
+                    {class: "li-nav"},
+                    'li-3'
+                ),
+                React.createEl(
+                    "li",
+                    {class: "li-nav"},
+                    'li-4'
+                )
             ]
         )
     }
