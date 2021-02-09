@@ -23,9 +23,8 @@ export class Button extends Component {
                     }
                 }
             },
-            [click],
-            "je suis un {type.name} {sexe} qui s'appelle {personne.type.name}"
-
+            "je suis un {type.name} {sexe} qui s'appelle {personne.type.name}",
+            [click]
         )
 
     }

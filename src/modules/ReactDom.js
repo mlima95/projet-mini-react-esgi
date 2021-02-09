@@ -4,16 +4,22 @@ function render(rootElement, createObject) {
     } else {
         let myElement = document.createElement(createObject.type);
         for (const prop of Object.keys(createObject.props)) {
-            for(const event of Object.values(createObject.event)){
-                myElement.addEventListener(event.name, event);
+            if (createObject.event) {
+                for (const event of Object.values(createObject.event)) {
+                    myElement.addEventListener(event.name, event);
+                }
             }
             myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
         }
 
         if (typeof createObject.childElement === 'string') {
-            let child = createObject.childElement.interpolate(createObject);
-            let nodeText = document.createTextNode(child);
-
+            let nodeText = null;
+            if (createObject.childElement.includes("{")) {
+                let child = createObject.childElement.interpolate(createObject);
+                 nodeText = document.createTextNode(child);
+            } else {
+                 nodeText = document.createTextNode(createObject.childElement);
+            }
             myElement.appendChild(nodeText);
 
         } else if (createObject.childElement === undefined) {

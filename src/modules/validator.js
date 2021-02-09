@@ -1,4 +1,4 @@
-function type_check_v1(value, type) {
+export function type_check_v1(value, type) {
     switch (typeof value) {
         case "string":
         case "number":
