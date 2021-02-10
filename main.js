@@ -4,4 +4,3 @@ import Blog from "./src/Views/Blog.js";
 
 route('/', Home);
 route('/blog', Blog);
-route('/page1', Home);

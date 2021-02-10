@@ -2,7 +2,7 @@ function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
         render(rootElement, createObject.type.display(createObject.props));
     } else {
-        //console.log(createObject)
+        console.log(createObject)
         //render(rootElement, createObject.type.display(createObject.props));
         let myElement = document.createElement(createObject.type);
         if(!Array.isArray(createObject))
