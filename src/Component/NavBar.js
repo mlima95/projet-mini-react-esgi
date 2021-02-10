@@ -27,8 +27,8 @@ export class NavBar extends Component {
                     {class: "li-nav"},
                     React.createEl(
                         "a",
-                        {href: "#/page1"},
-                        'Page1'
+                        {href: "#/blog"},
+                        'Blog'
                     )
                 ),
                 React.createEl(
@@ -36,8 +36,8 @@ export class NavBar extends Component {
                     {class: "li-nav"},
                     React.createEl(
                         "a",
-                        {href: "#/page2"},
-                        'Page2'
+                        {href: "#/page1"},
+                        'Page1'
                     )
                 ),
             ]
