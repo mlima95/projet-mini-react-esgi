@@ -17,7 +17,7 @@ let buttonComponent1 = React.createEl('nav', {title: "item1"}, "toto")
 // let buttonComponent5 = React.createEl(NavBar)
 
 //console.log(route.routes)
-route('/', 'home', null);
+route('/page2', Home);
 route('/page1', Home);
 
 

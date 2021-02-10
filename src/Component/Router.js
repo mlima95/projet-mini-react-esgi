@@ -15,6 +15,7 @@ function routerHistory(screen) {
 
 function router() {
     const main = document.getElementById('root');
+    
     var url = location.hash.slice(1) || '/';
     var routeUrl = routes[url];
     console.log(routeUrl)
@@ -24,5 +25,10 @@ function router() {
     }
 }
 
-window.addEventListener('hashchange', router);
+function routerChange() {
+    main.removeChild(main.firstChild)
+    router();
+}
+
+window.addEventListener('hashchange', routerChange);
 window.addEventListener('load', router);
