@@ -1,4 +1,4 @@
-import {React} from './src/modules/React.js'
+import {React} from './src/modules/React.js';
 import {ReactDom} from './src/modules/ReactDom.js'
 import {Button} from "./src/Component/Button.js";
 import route from "./src/Component/Router.js";
@@ -19,3 +19,4 @@ let buttonComponent5 = React.createEl(NavBar)
 
 
 ReactDom.render(document.getElementById('root'), buttonComponent1)
+

@@ -1,3 +1,4 @@
+
 import Component from "../modules/Component.js";
 import {type_check_v1} from "./validator.js";
 
@@ -38,7 +39,6 @@ Object.prototype.prop_access = function (path) {
  *
  * @return Object
  */
-
 function createEl(type, props, element, event = null) {
     //si component récupérer son render
     //si type class créer new et return render
@@ -49,7 +49,6 @@ function createEl(type, props, element, event = null) {
         event: event,
         childElement: element
     }
-
 
     if (type_check_v1(type, "string")) {
         objComponent.type = type;
