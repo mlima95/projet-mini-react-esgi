@@ -3,23 +3,24 @@ import {ReactDom} from "../modules/ReactDom.js";
 var routes = {};
 var routesHistory = {};
 
-export default function route(path, templateId, content) {
-    routes[path] = {templateId: templateId, content: content};
+export default function route(path, screen) {
+    routes[path] = {screen: screen};
+    //console.log(routes)
 }
 
-function routerHistory(templateId, content) {
-    console.log(templateId)
-    console.log(content)
-    return content
+function routerHistory(screen) {
+    //console.log(screen)
+    return screen
 }
 
 function router() {
     const main = document.getElementById('root');
     var url = location.hash.slice(1) || '/';
     var routeUrl = routes[url];
+    console.log(routeUrl)
     if (routeUrl.content !== null) {
         // main.nextElementSibling.remove()
-        ReactDom.render(main, routerHistory(routeUrl.templateId, routeUrl.content))
+        ReactDom.render(main, routerHistory(routeUrl.screen))
     }
 }
 

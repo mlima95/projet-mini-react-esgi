@@ -1,9 +1,9 @@
 function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
-        console.log(createObject)
+        //console.log(createObject)
         render(rootElement, createObject.type.display(createObject.props));
     } else {
-        console.log(createObject)
+        //console.log(createObject)
         //render(rootElement, createObject.type.display(createObject.props));
         let myElement = document.createElement(createObject.type);
         //console.log(createObject.props)

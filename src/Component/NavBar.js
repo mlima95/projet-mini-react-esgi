@@ -16,23 +16,30 @@ export class NavBar extends Component {
                 React.createEl(
                     "li",
                     {class: "li-nav"},
-                    'li-1'
+                    React.createEl(
+                        "a",
+                        {href: "#"},
+                        'Home'
+                    )
                 ),
                 React.createEl(
                     "li",
                     {class: "li-nav"},
-                    'li-2'
+                    React.createEl(
+                        "a",
+                        {href: "#/page1"},
+                        'Page1'
+                    )
                 ),
                 React.createEl(
                     "li",
                     {class: "li-nav"},
-                    'li-3'
+                    React.createEl(
+                        "a",
+                        {href: "#/page2"},
+                        'Page2'
+                    )
                 ),
-                React.createEl(
-                    "li",
-                    {class: "li-nav"},
-                    'li-4'
-                )
             ]
         )
     }
