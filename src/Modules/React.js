@@ -1,5 +1,5 @@
 
-import Component from "../modules/Component.js";
+import Component from ".//Component.js";
 import {type_check_v1} from "./validator.js";
 
 String.prototype.interpolate = function (createObject) {

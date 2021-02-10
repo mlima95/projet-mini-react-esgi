@@ -1,7 +1,8 @@
-import {ReactDom} from "../modules/ReactDom.js";
+import {ReactDom} from "../Modules/ReactDom.js";
 
 var routes = {};
 var routesHistory = {};
+const main = document.getElementById('root');
 
 export default function route(path, screen) {
     routes[path] = {screen: screen};
@@ -14,11 +15,8 @@ function routerHistory(screen) {
 }
 
 function router() {
-    const main = document.getElementById('root');
-    
     var url = location.hash.slice(1) || '/';
     var routeUrl = routes[url];
-    console.log(routeUrl)
     if (routeUrl.content !== null) {
         // main.nextElementSibling.remove()
         ReactDom.render(main, routerHistory(routeUrl.screen))

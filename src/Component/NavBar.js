@@ -1,5 +1,5 @@
-import Component from "../modules/Component.js";
-import {React} from "../modules/React.js";
+import Component from "../Modules/Component.js";
+import {React} from "../Modules/React.js";
 
 export class NavBar extends Component {
 
