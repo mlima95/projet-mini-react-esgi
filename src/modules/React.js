@@ -29,6 +29,20 @@ Object.prototype.prop_access = function (path) {
     return object;
 }
 
+const objTarget = {
+    type: "object",
+    properties: {
+        type: {type: "object"},
+        props: {type: "object"},
+        event: {
+            type: "object"
+        },
+        childElement: {
+            type: "object",
+        }
+    }
+}
+
 /**
  *
  * @param type
@@ -44,7 +58,7 @@ function createEl(type, props, element, event = null) {
     //si type class créer new et return render
     //@Check if type check
     let objComponent = {
-        type: null,
+        type: type,
         props: props,
         event: event,
         childElement: element

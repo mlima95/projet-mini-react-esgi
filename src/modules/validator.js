@@ -33,9 +33,9 @@ function type_check_v2(object, array) {
             case 'enum':
                 let found = false;
                 enum_loop: {
-                    for (value of array.enum) {
+                    for (let value of array.enum) {
                         if (type_check_v1(object, 'array')) {
-                            for (el of object) {
+                            for (let el of object) {
                                 if (type_check_v2(el, {value: value})) {
                                     found = true;
                                     break enum_loop;
