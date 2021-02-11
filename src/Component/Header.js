@@ -1,14 +1,27 @@
 import Component from "../Modules/Component.js";
 import {React} from "../Modules/React.js";
+import {ReactDom} from "../Modules/ReactDom.js";
 
 export class Header extends Component {
 
     state = {
-        counter: 0,
-        click: false
+        geolocation : null
     }
 
+
     render() {
+        const click = () => {
+            function success(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                sessionStorage.setItem('geolocation', `Latitude: ${latitude} °, Longitude: ${longitude} °`);
+            }
+
+            navigator.geolocation.getCurrentPosition(success);
+            this.setState({geolocation: sessionStorage.getItem("geolocation")})
+            ReactDom.render(document.getElementById('root'), React.createEl("h3",{},this.state.geolocation));
+        };
+
         return React.createEl(
             "header",
             {class: "blog-header py-3"},
@@ -40,7 +53,8 @@ export class Header extends Component {
                         React.createEl(
                             "a",
                             {class: "btn btn-sm btn-outline-secondary"},
-                            'Se connecter',
+                            'Où est ma brigitte ?',
+                            [click]
                         ),
                     ),
                 ]

@@ -16,7 +16,7 @@ export default [
     React.createEl(
         "main",
         {class: "container"},
-        [React.createEl(
+        [ React.createEl(
             "div",
             {class: "p-4 p-md-5 mb-4 text-white rounded bg-brigitte"},
             React.createEl(
