@@ -1,6 +1,7 @@
 import Component from "../Modules/Component.js";
 import {React} from "../Modules/React.js";
 import {Button} from "./Button.js";
+import {ReactDom} from "../Modules/ReactDom.js";
 
 export class LoadPosts extends Component {
 
@@ -11,19 +12,14 @@ export class LoadPosts extends Component {
 
     render() {
         const click = () => {
-            console.log('click')
             fetch("https://jsonplaceholder.typicode.com/posts")
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        this.setState({isLoaded: true});
-                        return result.forEach(element =>
-                            React.createEl(
-                                "h3",
-                                {},
-                                "toto",
-                            )
-                        );
+                        this.setState({
+                            isLoaded: true,
+                            posts: result
+                        });
                     },
                     // Remarque : il est important de traiter les erreurs ici
                     // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
@@ -37,12 +33,26 @@ export class LoadPosts extends Component {
                     }
                 )
         }
-        return React.createEl(
-            "button",
-            {},
-            "Charger les posts",
-            [click]
-        )
+        if(this.state.posts.length > 0){
+            this.state.posts.forEach(element =>{
+                // console.log(element.title)
+                ReactDom.render(document.getElementById('root'), React.createEl(
+                    "h3",
+                    {},
+                    element.title,
+                    [click]
+                ))
+            })
+
+        }else{
+            return React.createEl(
+                "button",
+                {},
+                "Charger les posts",
+                [click]
+            )
+        }
+
         //     return React.createEl(
         //         "div",
         //         {class: 'posts', id: 'posts'},

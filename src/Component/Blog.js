@@ -8,7 +8,7 @@ export class Blog extends Component {
             "h1",
             {},
             [
-                "Liste des artciles",
+                "Liste des articles",
             ],
         )
     }

@@ -14,6 +14,9 @@ export default class Component {
     setState(currentState) {
         this.oldState = Object.assign({}, this.state);
         this.state = Object.assign({}, this.state, currentState);
+        this.display(this.props)
+        console.log(this.oldState);
+        console.log(this.state);
     }
 
     componentDidMount() {

@@ -1,4 +1,4 @@
-import {type_check} from "./validator.js";
+import {type_check} from "./Validator.js";
 
 
 String.prototype.interpolate = function (createObject) {
