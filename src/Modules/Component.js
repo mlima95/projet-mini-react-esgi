@@ -1,6 +1,8 @@
 export default class Component {
 
     constructor(props) {
+        window.addEventListener('load', this.componentDidMount());
+        window.removeEventListener('load', this.componentWillUnmount())
         this.props = props;
         this.state = {};
         this.oldState = undefined;
@@ -10,10 +12,16 @@ export default class Component {
 
     // optionnel si il n'y a pas de state
     setState(currentState) {
-        console.log(currentState);
         this.oldState = Object.assign({}, this.state);
         this.state = Object.assign({}, this.state, currentState);
     }
+
+    componentDidMount() {
+    }
+
+    componentWillUnmount() {
+    }
+
 
     // // regénérer ou non prevProps undefined
     display(props) {

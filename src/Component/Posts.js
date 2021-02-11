@@ -4,19 +4,42 @@ import {React} from "../Modules/React.js";
 export class Posts extends Component {
 
     state = {
+        isLoaded: false,
         posts: {},
     }
 
-    async getAllPost() {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts')
-        const posts = await response.json();
-        return posts;
+    componentDidMount() {
+        console.log('componentDidMount')
+        this.getAllPost()
     }
 
-    async render() {
-        this.state.posts = await this.getAllPost().then((e) => {
+    async getAllPost() {
+        await fetch("https://jsonplaceholder.typicode.com/posts")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log(result)
+                    this.setState({
+                        isLoaded: true,
+                        posts: result
+                    });
+                },
+                // Remarque : il est important de traiter les erreurs ici
+                // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
+                // des exceptions provenant de réels bugs du composant.
+                (error) => {
+                    console.error(error)
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
 
-        })
+    render() {
+        console.log('this.state.posts')
+        console.log(this.state.posts)
         return React.createEl(
             "div",
             {class: 'posts', id: 'posts'},
