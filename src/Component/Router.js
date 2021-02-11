@@ -24,7 +24,10 @@ function router() {
 }
 
 function routerChange() {
-    main.removeChild(main.firstChild)
+    while(main.firstChild)
+    {
+        main.removeChild(main.firstChild)
+    }
     router();
 }
 
