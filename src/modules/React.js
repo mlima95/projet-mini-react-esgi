@@ -1,4 +1,4 @@
-import {type_check_v1} from "./validator.js";
+import {type_check} from "./validator.js";
 
 
 String.prototype.interpolate = function (createObject) {
@@ -32,16 +32,32 @@ Object.prototype.prop_access = function (path) {
 const objTarget = {
     type: "object",
     properties: {
-        type: {type: "object"},
+        type: {type: "function"},
         props: {type: "object"},
         event: {
-            type: "object"
+            type: "function"
         },
         childElement: {
-            type: "object",
+            type: "string",
         }
     }
 }
+
+function formatObject(arg, types){
+    if(arg.event === null){
+        types.properties.event.type = "null";
+    }else if (Array.isArray(arg.childElement)){
+        types.properties.childElement = "object";
+    }else if (typeof arg.childElement === "function"){
+        types.properties.childElement = "function";
+    }else if (typeof arg.childElement === "string"){
+        console.log(arg.childElement)
+        types.properties.childElement = "string";
+    }
+    return types;
+
+}
+
 
 /**
  *
@@ -63,8 +79,8 @@ function createEl(type, props, element, event = null) {
         event: event,
         childElement: element
     }
-
-    if (type_check_v1(type, "string")) {
+    let objFormat = formatObject(objComponent, objTarget)
+    if (!type_check(objComponent, objFormat)) {
         objComponent.type = type;
         return objComponent;
     } else {

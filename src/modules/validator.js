@@ -13,7 +13,7 @@ export function type_check_v1(value, type) {
                 case "null":
                     return value === null;
                 default:
-                    return value !== null && !Array.isArray(value);
+                    return !Array.isArray(value);
             }
     }
 }
