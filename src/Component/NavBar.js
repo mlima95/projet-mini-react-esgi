@@ -8,37 +8,16 @@ export class NavBar extends Component {
         click: false
     }
 
+
     render() {
         return React.createEl(
-            "nav",
-            {class: 'nav', id: 'test'},
+            "header",
+            {class: "d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm"},
             [
                 React.createEl(
-                    "li",
-                    {class: "li-nav"},
-                    React.createEl(
-                        "a",
-                        {href: "#"},
-                        'Home'
-                    )
-                ),
-                React.createEl(
-                    "li",
-                    {class: "li-nav"},
-                    React.createEl(
-                        "a",
-                        {href: "#/blog"},
-                        'Blog'
-                    )
-                ),
-                React.createEl(
-                    "li",
-                    {class: "li-nav"},
-                    React.createEl(
-                        "a",
-                        {href: "#/page1"},
-                        'Page1'
-                    )
+                    "p",
+                    {class: "h5 my-0 me-md-auto fw-normal"},
+                    'Le journal intime de Manu',
                 ),
             ]
         )

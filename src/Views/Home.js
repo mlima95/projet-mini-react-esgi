@@ -1,5 +1,7 @@
 import {React} from '../Modules/React.js';
 import {NavBar} from "../Component/NavBar.js";
+import {CallToAction} from "../Component/CallToAction.js";
+import {Footer} from "../Component/Footer.js";
 
 export default [
     React.createEl(
@@ -7,17 +9,11 @@ export default [
         undefined,
     ),
     React.createEl(
-        'div',
-        {},
-        React.createEl(
-            'p',
-            {},
-            'page 1'
-        )
+        CallToAction,
+        undefined,
     ),
     React.createEl(
-        'small',
-        {},
-        '© JS de merde'
-    )
+        Footer,
+        undefined,
+    ),
 ]

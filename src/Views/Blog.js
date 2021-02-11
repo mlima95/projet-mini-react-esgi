@@ -1,13 +1,19 @@
 import {React} from '../Modules/React.js';
-import {Blog} from "../Component/Blog.js";
-import {Button} from "../Component/Button.js";
 import {Posts} from "../Component/Posts.js";
+import {NavBar} from "../Component/NavBar.js";
+import {Footer} from "../Component/Footer.js";
 
 export default [
     React.createEl(
-        // Blog,
-        Posts,
-        // Button,
+        NavBar,
         undefined,
-    )
+    ),
+    React.createEl(
+        Posts,
+        undefined,
+    ),
+    React.createEl(
+        Footer,
+        undefined,
+    ),
 ]
