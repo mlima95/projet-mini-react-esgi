@@ -17,7 +17,7 @@ export class Footer extends Component {
                         React.createEl(
                             "p",
                             {},
-                            "Made with 💛 © ELie Semoun - 4IW3 Thomas Lemoine, Milan Lima, Edouard Gacher"
+                            "Made with 💛 © Elie Semoun - 4IW3 Thomas Lemoine, Milan Lima, Edouard Gacher"
                         ),
                     ),
                 ),
