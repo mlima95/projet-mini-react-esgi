@@ -9,46 +9,79 @@ export class CallToAction extends Component {
             {},
             [
                 React.createEl(
-                    "div",
-                    {class: "text-center"},
-                    React.createEl(
-                        "img",
-                        {src: "https://www.tonmag.fr/wp-content/uploads/2019/12/Emmanuel-Macron-1.jpg", width: "30%"}
-                    ),
-                ),
-                React.createEl(
-                    "section",
-                    {class: "text-center container"},
+                    "main",
+                    {class: "container"},
                     React.createEl(
                         "div",
-                        {class: "row py-lg-5"},
+                        {class: "p-4 p-md-5 mb-4 text-white rounded bg-manu"},
                         React.createEl(
                             "div",
-                            {class: "col-lg-6 col-md-8 mx-auto"},
-                            React.createEl(
-                                "h1",
-                                {class: "fw-light"},
-                                'Voici mon histoire',
-                            ),
+                            {class: "col-md-6 px-0"},
+                            [
+                                React.createEl(
+                                    "h1",
+                                    {class: "display-4 fst-italic"},
+                                    'Voici mon histoire',
+                                ),
+                                React.createEl(
+                                    "p",
+                                    {class: "lead my-3"},
+                                    "C'est de la Poudre de perlimpinpin ✨"
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "br",
+                                    {},
+                                ),
+                                React.createEl(
+                                    "p",
+                                    {class: "lead mb-0"},
+                                    [
+                                        React.createEl(
+                                            "a",
+                                            {class: "text-white fw-bold", href: "#/blog"},
+                                            "Lire la suite"
+                                        ),
+                                    ]
+                                )
+                            ],
                         ),
                     ),
-                ),
-                React.createEl(
-                    "p",
-                    {class: "text-center"},
-                    [
-                        React.createEl(
-                            "a",
-                            {href: "#/blog", class: "btn btn-warning my-2"},
-                            "Les gilets jaune"
-                        ),
-                        React.createEl(
-                            "a",
-                            {href: "#/blog", class: "btn btn-warning my-2"},
-                            "Les gilets jaune2"
-                        ),
-                    ],
-
                 ),
             ]
         )
