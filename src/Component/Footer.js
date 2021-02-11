@@ -10,13 +10,13 @@ export class Footer extends Component {
             [
                 React.createEl(
                     "footer",
-                    {class: "text-muted py-5"},
+                    {class: "blog-footer"},
                     React.createEl(
                         "div",
                         {class: "container"},
                         React.createEl(
                             "p",
-                            {class: "mb-1 text-center"},
+                            {},
                             "Made with 💛 © Alie Semoun - 4IW3 Thomas Lemoine, Milan Lima, Edouard Gacher"
                         ),
                     ),
