@@ -2,8 +2,6 @@ function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
         render(rootElement, createObject.type.display(createObject.props));
     } else {
-        console.log(createObject)
-        //render(rootElement, createObject.type.display(createObject.props));
         let myElement = document.createElement(createObject.type);
         if(!Array.isArray(createObject))
         for (const prop of Object.keys(createObject.props)) {
@@ -17,7 +15,7 @@ function render(rootElement, createObject) {
 
         if(Array.isArray(createObject))
         {
-            console.log('tt')
+            // console.log('tt')
             createObject.forEach(element => {
                 render(document.getElementById('root'), element)
             })
