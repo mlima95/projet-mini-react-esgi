@@ -36,11 +36,18 @@ export class CallToAction extends Component {
                 React.createEl(
                     "p",
                     {class: "text-center"},
-                    React.createEl(
-                        "a",
-                        {href: "#/blog", class: "btn btn-warning my-2"},
-                        "Les gilets jaune"
-                    ),
+                    [
+                        React.createEl(
+                            "a",
+                            {href: "#/blog", class: "btn btn-warning my-2"},
+                            "Les gilets jaune"
+                        ),
+                        React.createEl(
+                            "a",
+                            {href: "#/blog", class: "btn btn-warning my-2"},
+                            "Les gilets jaune2"
+                        ),
+                    ],
 
                 ),
             ]
