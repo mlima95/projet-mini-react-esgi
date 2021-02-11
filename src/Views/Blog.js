@@ -1,5 +1,5 @@
 import {React} from '../Modules/React.js';
-import {Posts} from "../Component/Posts.js";
+import {LoadPosts} from "../Component/LoadPosts.js";
 import {NavBar} from "../Component/NavBar.js";
 import {Footer} from "../Component/Footer.js";
 
@@ -9,7 +9,7 @@ export default [
         undefined,
     ),
     React.createEl(
-        Posts,
+        LoadPosts,
         undefined,
     ),
     React.createEl(

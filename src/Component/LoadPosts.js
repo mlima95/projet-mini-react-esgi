@@ -4,6 +4,11 @@ import {Button} from "./Button.js";
 
 export class LoadPosts extends Component {
 
+    state = {
+        isLoaded: false,
+        posts: {},
+    }
+
     render() {
         const click = () => {
             console.log('click')
@@ -11,11 +16,14 @@ export class LoadPosts extends Component {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log(result)
-                        this.setState({
-                            isLoaded: true,
-                            posts: result
-                        });
+                        this.setState({isLoaded: true});
+                        return result.forEach(element =>
+                            React.createEl(
+                                "h3",
+                                {},
+                                "toto",
+                            )
+                        );
                     },
                     // Remarque : il est important de traiter les erreurs ici
                     // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
