@@ -22,7 +22,6 @@ export default class Component {
     componentWillUnmount() {
     }
 
-
     // // regénérer ou non prevProps undefined
     display(props) {
         this.oldProps = Object.assign({}, this.props);

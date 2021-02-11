@@ -8,9 +8,9 @@ export class Posts extends Component {
         posts: {},
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         console.log('componentDidMount')
-        this.getAllPost()
+        await this.getAllPost()
     }
 
     async getAllPost() {
