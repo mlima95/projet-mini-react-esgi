@@ -24,7 +24,7 @@ export class SubNav extends Component {
                     ),
                     React.createEl(
                         "a",
-                        {class: "p-2 link-secondary", href: "#/brigitte"},
+                        {class: "p-2 link-secondary", href: "#/maCougar"},
                         "Ma brigitte"
                     ),
                     React.createEl(

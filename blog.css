@@ -113,3 +113,11 @@ a.disabled {
   background-size: cover;
   background-position: 50% 50%;
 }
+
+/* Page Brigitte */
+
+.bg-brigitte{
+  background-image: url("https://rigolotes.fr/img/normal/20180114/N35/20180114.jpg");
+  background-size: cover;
+  background-position: 50% 0;
+}
