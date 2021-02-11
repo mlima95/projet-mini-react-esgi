@@ -21,9 +21,6 @@ export class LoadPosts extends Component {
                             posts: result
                         });
                     },
-                    // Remarque : il est important de traiter les erreurs ici
-                    // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-                    // des exceptions provenant de réels bugs du composant.
                     (error) => {
                         console.error(error)
                         this.setState({
@@ -33,41 +30,41 @@ export class LoadPosts extends Component {
                     }
                 )
         }
-        if(this.state.posts.length > 0){
-            this.state.posts.forEach(element =>{
-                // console.log(element.title)
+        if (this.state.posts.length > 0) {
+            this.state.posts.forEach(element => {
                 ReactDom.render(document.getElementById('root'), React.createEl(
-                    "h3",
-                    {},
-                    element.title,
-                    [click]
+                    "div",
+                    {class: "row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm position-relative"},
+                    React.createEl(
+                        "div",
+                        {class: "col p-4 d-flex flex-column position-static"},
+                        [
+                            React.createEl(
+                                "h3",
+                                {class: "mb-0"},
+                                element.title
+                            ),
+                            React.createEl(
+                                "p",
+                                {class: "card-text"},
+                                element.body
+                            )
+                        ]
+                    )
                 ))
             })
 
-        }else{
+        } else {
             return React.createEl(
-                "button",
-                {},
-                "Charger les posts",
-                [click]
+                "div",
+                {class: "text-center pt-5 pb-5"},
+                React.createEl(
+                    "button",
+                    {class: "btn btn-success"},
+                    "Charger les propositions de la convention citoyenne",
+                    [click]
+                )
             )
         }
-
-        //     return React.createEl(
-        //         "div",
-        //         {class: 'posts', id: 'posts'},
-        //         [
-        //             this.state.posts.forEach(
-        //                 element => {
-        //                     return React.createEl(
-        //                         "h3",
-        //                         {},
-        //                         element.title
-        //                     )
-        //                 }
-        //             )
-        //         ]
-        //     )
-        // }
     }
 }

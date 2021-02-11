@@ -8,7 +8,6 @@ export class Header extends Component {
         click: false
     }
 
-
     render() {
         return React.createEl(
             "header",
@@ -31,7 +30,7 @@ export class Header extends Component {
                         {class: "col-4 text-center"},
                         React.createEl(
                             "a",
-                            {class: "blog-header-logo text-dark"},
+                            {class: "blog-header-logo text-dark", href: "/"},
                             'Le journal de Manu',
                         ),
                     ),
