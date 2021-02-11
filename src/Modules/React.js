@@ -43,24 +43,23 @@ const objTarget = {
     }
 }
 
-function formatObject(arg, types){
-    if(arg.event === null){
+function formatObject(arg, types) {
+    if (arg.event === null) {
         types.properties.event.type = "null";
     }
 
-    if (Array.isArray(arg.childElement)){
-        types.properties.childElement.type  = "object";
-    }else if (typeof arg.childElement === "function"){
-        types.properties.childElement.type  = "function";
-    }else if (typeof arg.childElement === "string"){
-        types.properties.childElement.type  = "string";
-    }
-    else if (typeof arg.childElement === "undefined"){
-        types.properties.childElement.type  = "undefined";
+    if (Array.isArray(arg.childElement)) {
+        types.properties.childElement.type = "object";
+    } else if (typeof arg.childElement === "function") {
+        types.properties.childElement.type = "function";
+    } else if (typeof arg.childElement === "string") {
+        types.properties.childElement.type = "string";
+    } else if (typeof arg.childElement === "undefined") {
+        types.properties.childElement.type = "undefined";
     }
 
-    if (typeof arg.props === "undefined"){
-        types.properties.props.type  = "undefined";
+    if (typeof arg.props === "undefined") {
+        types.properties.props.type = "undefined";
     }
     return types;
 

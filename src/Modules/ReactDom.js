@@ -3,19 +3,17 @@ function render(rootElement, createObject) {
         render(rootElement, createObject.type.display(createObject.props));
     } else {
         let myElement = document.createElement(createObject.type);
-        if(!Array.isArray(createObject))
-        for (const prop of Object.keys(createObject.props)) {
-            if (createObject.event) {
-                for (const event of Object.values(createObject.event)) {
-                    myElement.addEventListener(event.name, event);
+        if (!Array.isArray(createObject))
+            for (const prop of Object.keys(createObject.props)) {
+                if (createObject.event) {
+                    for (const event of Object.values(createObject.event)) {
+                        myElement.addEventListener(event.name, event);
+                    }
                 }
+                myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
             }
-            myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
-        }
 
-        if(Array.isArray(createObject))
-        {
-            // console.log('tt')
+        if (Array.isArray(createObject)) {
             createObject.forEach(element => {
                 render(document.getElementById('root'), element)
             })
@@ -25,23 +23,21 @@ function render(rootElement, createObject) {
             let nodeText = null;
             if (createObject.childElement.includes("{")) {
                 let child = createObject.childElement.interpolate(createObject);
-                 nodeText = document.createTextNode(child);
+                nodeText = document.createTextNode(child);
             } else {
-                 nodeText = document.createTextNode(createObject.childElement);
+                nodeText = document.createTextNode(createObject.childElement);
             }
             myElement.appendChild(nodeText);
 
         } else if (createObject.childElement === undefined) {
             console.log('pas d\'enfant')
         } else {
-            if(Array.isArray(createObject.childElement))
-            {
+            if (Array.isArray(createObject.childElement)) {
                 createObject.childElement.forEach(element => {
-                    render(myElement, element);            
+                    render(myElement, element);
                 });
-            }
-            else{
-                render(myElement, createObject.childElement);  
+            } else {
+                render(myElement, createObject.childElement);
             }
         }
         //génération du DOM
