@@ -3,12 +3,11 @@ function render(rootElement, createObject) {
         render(rootElement, createObject.type.display(createObject.props));
     } else {
         let myElement = document.createElement(createObject.type);
-        if (!Array.isArray(createObject)){
+        if (!Array.isArray(createObject)) {
             for (const prop of Object.keys(createObject.props)) {
                 myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
             }
             if (createObject.event) {
-                console.log('event')
                 for (const event of Object.values(createObject.event)) {
                     myElement.addEventListener(event.name, event);
                 }
@@ -33,7 +32,7 @@ function render(rootElement, createObject) {
             myElement.appendChild(nodeText);
 
         } else if (createObject.childElement === undefined) {
-            console.log('pas d\'enfant')
+            console.log("no children");
         } else {
             if (Array.isArray(createObject.childElement)) {
                 createObject.childElement.forEach(element => {

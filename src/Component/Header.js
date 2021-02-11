@@ -5,7 +5,7 @@ import {ReactDom} from "../Modules/ReactDom.js";
 export class Header extends Component {
 
     state = {
-        geolocation : null
+        geolocation: null
     }
 
 
@@ -19,7 +19,7 @@ export class Header extends Component {
 
             navigator.geolocation.getCurrentPosition(success);
             this.setState({geolocation: sessionStorage.getItem("geolocation")})
-            ReactDom.render(document.getElementById('root'), React.createEl("h3",{},this.state.geolocation));
+            ReactDom.render(document.getElementById('root'), React.createEl("h3", {}, this.state.geolocation));
         };
 
         return React.createEl(

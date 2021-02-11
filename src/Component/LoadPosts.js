@@ -1,6 +1,5 @@
 import Component from "../Modules/Component.js";
 import {React} from "../Modules/React.js";
-import {Button} from "./Button.js";
 import {ReactDom} from "../Modules/ReactDom.js";
 
 export class LoadPosts extends Component {

@@ -8,6 +8,7 @@ export class Button extends Component {
         click: false
     }
 
+    // not use
     render() {
         const click = () => {
             this.setState({counter: this.state.counter + 1, click: !this.state.click})
