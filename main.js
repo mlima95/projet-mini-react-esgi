@@ -1,12 +1,7 @@
-import {React} from './src/modules/React.js'
-import {ReactDom} from "./src/modules/ReactDom.js";
-import {Button} from "./src/Component/Button.js";
+import route from "./src/Component/Router.js";
+import Home from "./src/Views/Home.js";
+import Blog from "./src/Views/Blog.js";
 
-
-// let buttonComponent1 = React.createEl('nav', {title: "item1"}, "toto")
-// let buttonComponent2 = React.createEl('nav', {title: "item2"}, buttonComponent1)
-// let buttonComponent3 = React.createEl('div', {title: "item3"}, buttonComponent2)
-
-let buttonComponent4 = React.createEl(Button, {title: "item1"}, "toto");
-
-ReactDom.render(document.getElementById('root'), buttonComponent4)
+route('/', Home);
+route('/blog', Blog);
+route('/page1', Home);

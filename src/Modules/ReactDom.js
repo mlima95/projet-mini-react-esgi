@@ -1,8 +1,12 @@
 function render(rootElement, createObject) {
     if (typeof createObject.type === 'object') {
+        //console.log(createObject)
         render(rootElement, createObject.type.display(createObject.props));
     } else {
+        //console.log(createObject)
+        //render(rootElement, createObject.type.display(createObject.props));
         let myElement = document.createElement(createObject.type);
+        //console.log(createObject.props)
         for (const prop of Object.keys(createObject.props)) {
             if (createObject.event) {
                 for (const event of Object.values(createObject.event)) {
@@ -25,7 +29,15 @@ function render(rootElement, createObject) {
         } else if (createObject.childElement === undefined) {
             console.log('pas d\'enfant')
         } else {
-            render(myElement, createObject.childElement);
+            if(Array.isArray(createObject.childElement))
+            {
+                createObject.childElement.forEach(element => {
+                    render(myElement, element);            
+                });
+            }
+            else{
+                render(myElement, createObject.childElement);  
+            }
         }
         //génération du DOM
         return (

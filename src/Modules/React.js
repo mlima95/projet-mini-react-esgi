@@ -69,7 +69,6 @@ function formatObject(arg, types){
  * @return Object
  */
 function createEl(type, props, element, event = null) {
-
     //si component récupérer son render
     //si type class créer new et return render
     //@Check if type check
