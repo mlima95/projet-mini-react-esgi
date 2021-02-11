@@ -4,16 +4,18 @@ function render(rootElement, createObject) {
     } else {
         console.log(createObject)
         let myElement = document.createElement(createObject.type);
-        if (!Array.isArray(createObject))
+        if (!Array.isArray(createObject)){
             for (const prop of Object.keys(createObject.props)) {
-                if (createObject.event) {
-                    console.log('event')
-                    for (const event of Object.values(createObject.event)) {
-                        myElement.addEventListener(event.name, event);
-                    }
-                }
                 myElement.setAttribute(prop.toString(), createObject.props[prop].toString())
             }
+            if (createObject.event) {
+                console.log('event')
+                for (const event of Object.values(createObject.event)) {
+                    myElement.addEventListener(event.name, event);
+                }
+            }
+
+        }
 
         if (Array.isArray(createObject)) {
             createObject.forEach(element => {
